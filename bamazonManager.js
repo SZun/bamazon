@@ -19,6 +19,14 @@ const read = () => {
     });
 };
 
+const readNew = (id) => {
+    connection.query("SELECT * FROM products WHERE item_id = ?",[id],function(err,res){
+    if(err) throw err;
+    console.log(res);
+    connection.end();
+    });
+};
+
 const lowInventory = () => {
     connection.query("SELECT * FROM products WHERE stock_quantity <= 5",function(err,res){
         if (err) throw err;
@@ -69,7 +77,7 @@ const addNewProduct = () => {
         },
         {
             type: "input",
-            message: "What department is this prduct in?",
+            message: "What department is this product in?",
             name: "prod_department"
         },
         {
@@ -89,9 +97,9 @@ const addNewProduct = () => {
         price = res.prod_price;
         quant = res.prod_quant;
         connection.query("INSERT INTO products(item_id,product_name,department_name,price,stock_quantity)" + 
-        "VALUES (?,?,?,?,?)",[id,department,name,price,quant]).then(
-             read()
-        )
+        "VALUES (?,?,?,?,?)",
+        [id,department,name,price,quant])
+        readNew(id)
     })  
 }
 
