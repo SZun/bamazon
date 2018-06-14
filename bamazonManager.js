@@ -72,7 +72,7 @@ const addNewProduct = () => {
         },
         {
             type: "input",
-            message: "What is the name of the prodcut?",
+            message: "What is the name of the product?",
             name: "prod_name"
         },
         {
@@ -98,7 +98,7 @@ const addNewProduct = () => {
         quant = res.prod_quant;
         connection.query("INSERT INTO products(item_id,product_name,department_name,price,stock_quantity)" + 
         "VALUES (?,?,?,?,?)",
-        [id,department,name,price,quant])
+        [id,name,department,price,quant])
         readNew(id)
     })  
 }
