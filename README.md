@@ -2,7 +2,7 @@
 
 **To access the repo git clone to a folder of your choosing**
 
-Create the database and table schema by running the **bamazonSEES.sql** file in your MySQL workbench or any other IDE of your choosing.
+Create the database and table schema by running the **bamazonSEEDS.sql** file in your MySQL workbench or any other IDE of your choosing.
 
 *cd* into the *bamazon* directory and run **npm i**
 
