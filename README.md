@@ -4,6 +4,8 @@
 
 Create the database and table schema by running the **bamazonSEEDS.sql** file in your MySQL workbench or any other IDE of your choosing.
 
+Then import the **products.csv** file into your MySQL database.
+
 *cd* into the *bamazon* directory and run **npm i**
 
 Once the packages are installed open your command line and run **node bamazonCustomer**
